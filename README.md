@@ -1,0 +1,3 @@
+# Mazematica
+
+Mathematics for everybody
