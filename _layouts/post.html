@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<article class="post-text">
+    <div class="row">
+        <div class="columns eight offset-one post-header">
+            <h2><a href="{{ post.url }}">{{ page.title }}</a></h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="columns ten offset-one post-content">
+            {{ content }}
+            <div class="actions">
+                <a href="https://github.com/mazematica/mazematica.github.io/blob/master/{{ page.path }}" style="display: inline-block;">¿Algo raro? ¡Corrígeme!<span class="icon-pencil"></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="columns ten offset-one post-content disqus-comments">
+            <h4 class="header-nc">Comentarios</h3>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//mazematica.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+        </div>
+    </div>
+</article>

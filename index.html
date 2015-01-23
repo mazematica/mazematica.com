@@ -1,0 +1,27 @@
+---
+layout: default
+title: Mazematica – Matemáticas para todos
+description: Matemáticas para todos
+---
+
+{% for post in site.posts %}
+    <article class="post-text">
+        <div class="row">
+            <div class="columns eight offset-one post-header">
+                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="columns ten offset-one post-content">
+                {% if post.description %}
+                    {{ post.description }}
+                {% else %}
+                    {{ post.excerpt }}
+                {% endif %}
+                <p class="read_more_container">
+                    <a href="{{ post.url }}" class="read_more">Leer Más<span class="icon-arrow-right5"></span></a>
+                </p>
+            </div>
+        </div>
+    </article>
+{% endfor %}

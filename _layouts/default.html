@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="js flexbox flexboxlegacy no-touch draganddrop backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns csstransforms csstransforms3d csstransitions fontface" lang="en">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <title>{{ page.title }}</title>
+
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet" type="text/css">
+        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="/js/main.js"></script>
+
+        <meta name="description" content="{% if page.description %}{{ page.description | strip_html }}{% else %}{{ page.excerpt | strip_html }}{% endif %}">
+        <meta property="og:title" content="{{ page.title }}">
+        <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html }}{% else %}{{ page.excerpt | strip_html }}{% endif %}">
+        <meta property="og:image" content="http://mazematica.com/assets/images/logo.png" />
+        <meta name="twitter:title" content="{{ page.title }}">
+        <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html }}{% else %}{{ page.excerpt | strip_html }}{% endif %}">
+
+        <meta http-equiv="x-dns-prefetch-control" content="off">
+    </head>
+    <body>
+        <div class="offcanvas">
+            <div class="container" id="container">
+                <div class="row">
+                    <header class="columns twelve">
+                        <h1 class="blog-title">
+                            <a href="/">Mazematica</a>
+                        </h1>
+
+                        <h2 class="blog-description">Matemáticas para todos</h2>
+                    </header>
+                </div>
+
+                <div class="posts-container">
+                {{ content }}
+                </div>
+
+                <div class="row">
+                    <div class="columns ten offset-one social-icons">
+                        <a href="https://twitter.com/mazematica"><span class="icon-twitter"></span></a>
+                        <a href="https://www.facebook.com/mazematica"><span class="icon-facebook"></span></a>
+                        <a href="https://github.com/mazematica"><span class="icon-github"></span></a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="columns ten offset-one copyrights">2015 &copy; Copyright</div>
+                </div>
+            </div>
+
+            <div class="contentspacer"></div>
+
+            <div class="footer push">
+                <a href="#"><span class="icon-arrow-up"></span></a>
+            </div>
+        </div>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-58896016-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+    </body>
+</html>
