@@ -13,11 +13,13 @@ description: Matemáticas para todos
         </div>
         <div class="row">
             <div class="columns ten offset-one post-content">
+            
                 {% if post.description %}
-                    {{ post.description }}
+                    <p>{{ post.description }}<p>
                 {% else %}
                     {{ post.excerpt }}
                 {% endif %}
+                
                 <p class="read_more_container">
                     <a href="{{ post.url }}" class="read_more">Leer Más<span class="icon-arrow-right5"></span></a>
                 </p>
