@@ -1,7 +1,7 @@
 gems:
   - jekyll-redirect-from
 name: Mazematica
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
 permalink: /:title
 excerpt_separator: <!--more-->
