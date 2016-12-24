@@ -374,28 +374,32 @@ article {
 .post-content h6 {
     font-family: Montserrat, "Open Sans", "Century Gothic", "Trebuchet MS", Helvetica, sans-serif;
     font-weight: 400;
-    margin-bottom: 40px;
 }
 
 .post-content h1 {
     font-size: 2em;
+    margin-bottom: 40px;
 }
 
 .post-content h2 {
     font-size: 1.8em;
+    margin-bottom: 35px;
 }
 
 .post-content h3 {
     font-size: 1.6em;
+    margin-bottom: 30px;
 }
 
 .post-content h4 {
     font-size: 1.4em;
+    margin-bottom: 25px;
 }
 
 .post-content h5,
 .post-content h6 {
     text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
 .post-content h5 {
@@ -417,7 +421,6 @@ article {
 
 .post-content ol,
 .post-content ul {
-    list-style-position: inside;
     margin-bottom: 30px;
 }
 
@@ -801,3 +804,7 @@ pre {
 .highlight .vg { color: #369 } /* Name.Variable.Global */
 .highlight .vi { color: #369 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+ol, ul {
+  margin-left: 2.5em;
+}

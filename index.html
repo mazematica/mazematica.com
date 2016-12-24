@@ -1,29 +1,19 @@
 ---
-layout: default
-title: Mazematica – Matemáticas para todos
-description: Matemáticas para todos
+layout: post
+title: "Matemáticas para todos"
+description: |
+    Mazematica es un intento de acercar las matemáticas al gran público. Queremos hacer de las matemáticas algo cotidiano, productivo, ameno y divertido, de consumo selectivo y personalizado, romper con las barreras de lo estrictamente académico. Queremos hacer de las matemáticas algo para todos.
 ---
 
-{% for post in site.posts %}
-    <article class="post-text">
-        <div class="row">
-            <div class="columns eight offset-one post-header">
-                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="columns ten offset-one post-content">
-            
-                {% if post.description %}
-                    <p>{{ post.description }}<p>
-                {% else %}
-                    {{ post.excerpt }}
-                {% endif %}
-                
-                <p class="read_more_container">
-                    <a href="{{ post.url }}" class="read_more">Leer Más<span class="icon-arrow-right5"></span></a>
-                </p>
-            </div>
-        </div>
-    </article>
+<p>A menudo la belleza de la madre de las ciencias palidece frente a un lenguaje lejano, abstracto y complejo.</p>
+<p><strong>Mazematica</strong> es un intento de acercar las matemáticas al gran público. Queremos hacer de las matemáticas algo cotidiano, productivo, ameno y divertido, de consumo selectivo y personalizado, romper con las barreras de lo estrictamente académico. Queremos hacer de las matemáticas algo <strong>para todos</strong>.</p>
+
+<h2>Tabla de contenidos</h2>
+
+<ul>
+{% for p in site.pages %}
+  {% if p != page and p.layout == 'post' %}
+    <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+  {% endif %}
 {% endfor %}
+</ul>

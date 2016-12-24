@@ -11,6 +11,22 @@ layout: default
     <div class="row">
         <div class="columns ten offset-one post-content">
             {{ content }}
+            {% assign related = '' | split: '|' %}
+            {% for p in site.pages %}
+              {% if p.tag == page.tag and p.path != page.path and p.tag != null %}
+                {% assign related = related | push: p %}
+              {% endif %}
+            {% endfor %}
+
+            {% assign size = related | size %}
+            {% if size > 0 %}
+              <h4>Quizás te interese</h4>
+              <ul>
+                {% for p in related %}
+                  <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
             <div class="actions">
                 <a href="https://github.com/mazematica/mazematica.com/edit/gh-pages/{{ page.path }}" style="display: inline-block;">¿Algo raro? ¡Corrígeme!<span class="icon-pencil"></span></a>
             </div>
