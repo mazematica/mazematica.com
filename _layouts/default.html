@@ -14,14 +14,9 @@
 
         <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext" rel="stylesheet">
         <link href="/css/main.css" rel="stylesheet" type="text/css">
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-              jax: ["input/TeX", "output/HTML-CSS"],
-              displayAlign: "left"
-          });
-        </script>
-        <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script src="/js/main.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
 
         <meta name="description" content="{% if page.description %}{{ page.description | strip_html }}{% else %}{{ page.excerpt | strip_html }}{% endif %}">
         <meta property="og:title" content="{{ page.title }}">
@@ -74,6 +69,41 @@
 
             ga('create', 'UA-58896016-1', 'auto');
             ga('send', 'pageview');
+        </script>
+
+        <script>
+            (function() {
+              function removeComments(str) {
+                return str.concat('\n').replace(/%.*\n/g, '');
+              }
+
+              function forEach(selector, fn) {
+                [].forEach.call(document.querySelectorAll(selector), fn);
+              }
+
+              function replaceWith(elem, tag, content) {
+                var newElem = document.createElement(tag);
+                newElem.innerHTML = content;
+                elem.parentNode.replaceChild(newElem, elem);
+              }
+
+              function renderLatex(content) {
+                return katex.renderToString(removeComments(content));
+              }
+
+              function render(tag) {
+                return function(script) {
+                  replaceWith(script, tag, renderLatex(script.innerHTML));
+                };
+              }
+
+              function init() {
+                forEach("script[type='math/tex']", render('span'));
+                forEach("script[type='math/tex; mode=display']", render('p'));
+              }
+
+              init();
+            })();
         </script>
     </body>
 </html>
